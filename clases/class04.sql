@@ -22,5 +22,15 @@ inner join address ad on s.address_id = ad.address_id
 inner join city c on ad.city_id = c.city_id
 inner join country co on c.country_id = co.country_id
 where s.store_id = 1;
+#7
+select f1.title as film1_title, f1.rating, f2.title as film2_title, f2.rating from film f1
+inner join film f2 on f1.rating = f2.rating
+where f1.film_id <> f2.film_id;
+#8
+select distinct f.title, f.release_year, st.first_name as manager_of_store2 from film f
+inner join inventory inv on f.film_id = inv.film_id
+inner join store s on s.store_id = inv.store_id
+inner join staff st on s.manager_staff_id = st.staff_id
+where s.store_id = 2;	
 
 
