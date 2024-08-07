@@ -47,7 +47,7 @@ LIMIT 1;
 
 UPDATE rental
 SET return_date = NOW()
-WHERE rental_id = 16052;
+WHERE rental_id = 16053;
 
 UPDATE inventory
 SET last_update = NOW()
