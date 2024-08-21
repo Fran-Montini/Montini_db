@@ -50,11 +50,3 @@ WHERE MONTH(r.rental_date) = '05' OR MONTH(r.rental_date) = '06'
 ORDER BY r.rental_date;
 
 
-
-SELECT title, CAST(length AS CHAR(10)) AS length_text
-FROM film
-LIMIT 10;
-
-SELECT CONVERT(title USING utf8) AS title_utf8, rental_rate
-FROM film
-LIMIT 10;
