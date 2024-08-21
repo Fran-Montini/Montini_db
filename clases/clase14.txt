@@ -1,0 +1,21 @@
+5)Investigar las funciones CAST y CONVERT. Explicar las diferencias, si las hay, y escribir ejemplos basados ​​en la base de datos Sakila.
+
+Direncias:
+La función `CONVERT` puede convertir el conjunto de caracteres de los datos en otro conjunto de caracteres. La función `CAST` no puede convertir el conjunto de caracteres.
+Cast:
+SELECT CAST(last_update AS DATE) as only_date
+FROM rental;
+Converte:
+SELECT actor_id, first_name, CONVERT(first_name USING latin1) AS first_name_latin1
+FROM actor
+LIMIT 10;
+
+6)Investigar los tipos de funciones NVL, ISNULL, IFNULL, COALESCE, etc. Explicar qué hacen, cuáles no están en MySQL y escribir ejemplos de uso.
+
+Las funciones(NVL, ISNULL, IFNULL, COALESCE)permiten recuperar un valor alternativo si una expresión es NULL. La única diferencia es que son compatibles con diferentes sistemas de gestión de bases de datos (MySQL, SQL Server, Oracle). En MySQL, solo tenemos IFNULL y COALESCE. Así que NVL e ISNULL no están disponibles en MySQL.
+
+-IFNULL:
+SELECT address_id, address, IFNULL(address2, "Alternative value") FROM address LIMIT 10;
+
+-COALESCE:
+SELECT address_id, address, COALESCE(address2, "Alternative value") FROM address LIMIT 10;
